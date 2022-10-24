@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.lessonsapp.R
 import com.example.lessonsapp.databinding.ActivityMainBinding
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(
             binding.tabLayout, binding.viewPager
         ) { _, _ -> }.attach()
-        setCustomTabs()
         activeTabListener()
     }
 
@@ -30,17 +28,16 @@ class MainActivity : AppCompatActivity() {
         private const val CLASSES = 1
     }
 
-    private fun setCustomTabs() {
-        binding.tabLayout.getTabAt(HOME)?.setCustomView(R.layout.view_pager_tab_home_selected)
-        binding.tabLayout.getTabAt(CLASSES)?.setCustomView(R.layout.view_pager_tab_classes)
-    }
-
     private fun activeTabListener() {
+
         binding.viewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 setHighLightedTab(position)
+                super.onPageSelected(position)
             }
         })
+        binding.tabLayout.getTabAt(CLASSES)?.select()
+        binding.tabLayout.getTabAt(HOME)?.select()
     }
 
     private fun setHighLightedTab(position: Int) {
@@ -61,4 +58,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 }
