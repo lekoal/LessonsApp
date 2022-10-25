@@ -8,14 +8,14 @@ import com.example.lessonsapp.utils.ViewBindingFragment
 
 class MainFragment : ViewBindingFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
 
-    private lateinit var adapter: RVMainClassesAdapter
+    private lateinit var classesAdapter: RVMainClassesAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = RVMainClassesAdapter()
-        binding.rvClassesHome.adapter = adapter
+        classesAdapter = RVMainClassesAdapter()
+        binding.rvClassesHome.adapter = classesAdapter
         val data = LessonsListMock()
-        adapter.setData(data.getLessons())
+        classesAdapter.setData(data.getLessons())
     }
 
     companion object {

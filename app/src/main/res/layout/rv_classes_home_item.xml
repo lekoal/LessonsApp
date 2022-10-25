@@ -21,7 +21,7 @@
                 android:id="@+id/lesson_letter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp"
+                android:layout_margin="20dp"
                 app:cardBackgroundColor="@color/grey_800"
                 app:cardCornerRadius="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
