@@ -43,19 +43,33 @@ class MainActivity : AppCompatActivity() {
     private fun setHighLightedTab(position: Int) {
         when (position) {
             HOME -> {
-                binding.tabLayout.getTabAt(HOME)?.customView = null
-                binding.tabLayout.getTabAt(HOME)
-                    ?.setCustomView(R.layout.view_pager_tab_home_selected)
-                binding.tabLayout.getTabAt(CLASSES)?.customView = null
-                binding.tabLayout.getTabAt(CLASSES)?.setCustomView(R.layout.view_pager_tab_classes)
+                activateTab(HOME)
+                deactivateTab(CLASSES)
             }
             CLASSES -> {
-                binding.tabLayout.getTabAt(HOME)?.customView = null
-                binding.tabLayout.getTabAt(HOME)?.setCustomView(R.layout.view_pager_tab_home)
-                binding.tabLayout.getTabAt(CLASSES)?.customView = null
-                binding.tabLayout.getTabAt(CLASSES)
-                    ?.setCustomView(R.layout.view_pager_tab_classes_selected)
+                activateTab(CLASSES)
+                deactivateTab(HOME)
             }
+        }
+    }
+
+    private fun activateTab(tabIndex: Int) {
+        binding.tabLayout.getTabAt(tabIndex)?.customView = null
+        when (tabIndex) {
+            HOME -> binding.tabLayout.getTabAt(tabIndex)
+                ?.setCustomView(R.layout.view_pager_tab_home_selected)
+            CLASSES -> binding.tabLayout.getTabAt(tabIndex)
+                ?.setCustomView(R.layout.view_pager_tab_classes_selected)
+        }
+    }
+
+    private fun deactivateTab(tabIndex: Int) {
+        binding.tabLayout.getTabAt(tabIndex)?.customView = null
+        when (tabIndex) {
+            HOME -> binding.tabLayout.getTabAt(tabIndex)
+                ?.setCustomView(R.layout.view_pager_tab_home)
+            CLASSES -> binding.tabLayout.getTabAt(tabIndex)
+                ?.setCustomView(R.layout.view_pager_tab_classes)
         }
     }
 

@@ -5,7 +5,4 @@ import com.example.lessonsapp.utils.ViewBindingFragment
 
 class ClassesFragment : ViewBindingFragment<FragmentClassesBinding>(FragmentClassesBinding::inflate) {
 
-    companion object {
-
-    }
 }
