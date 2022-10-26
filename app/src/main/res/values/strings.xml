@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">LessonsApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_home_title">Home</string>
+    <string name="fragment_classes_title">Classes</string>
+    <string name="welcome_text">Oh, hi Mark</string>
+    <string name="are_you_ready">Are you ready for exams?</string>
+    <string name="exam_counter_days_title">Days</string>
+    <string name="exam_counter_hours_title">Hours</string>
+    <string name="exam_counter_minutes_title">Minutes</string>
+    <string name="classes_title">Classes</string>
+    <string name="open_in_skype">Open in</string>
+    <string name="homework_title">Homework</string>
+    <string name="lesson_time_range">%1$s - %2$s</string>
+    <string name="classes_today">%1$d classes today</string>
+    <string name="days_before_homework">%1$d days left</string>
+    <string name="teacher_name">Teacher: %1$s</string>
 </resources>

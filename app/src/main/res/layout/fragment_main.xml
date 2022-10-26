@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/black"
+    tools:context=".ui.main.MainFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/welcome_text"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/ic_baseline_settings_24"
+        app:layout_constraintBottom_toBottomOf="@id/welcome_text"
+        app:layout_constraintEnd_toStartOf="@id/user_logo"
+        app:layout_constraintTop_toTopOf="@id/welcome_text" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@id/welcome_text"
+        app:layout_constraintEnd_toStartOf="@id/user_settings"
+        app:layout_constraintTop_toTopOf="@id/welcome_text" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_logo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/mark"
+        app:layout_constraintBottom_toBottomOf="@id/welcome_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/welcome_text" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/exam_timer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="@id/user_logo"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="@id/welcome_text"
+        app:layout_constraintTop_toBottomOf="@id/welcome_text">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_green"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/are_you_ready"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:id="@+id/date_time_counter_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:columnCount="5"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_gravity="center"
+                    app:chipSpacingHorizontal="0dp"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/days_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/green_a_700"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:chipCornerRadius="10dp"
+                        app:chipEndPadding="3dp"
+                        app:chipMinTouchTargetSize="40dp"
+                        app:chipStartPadding="3dp"
+                        app:chipStrokeColor="@color/green_900"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="0" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/days_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/green_a_700"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:chipCornerRadius="10dp"
+                        app:chipEndPadding="3dp"
+                        app:chipMinTouchTargetSize="40dp"
+                        app:chipStartPadding="3dp"
+                        app:chipStrokeColor="@color/green_900"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="0" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="center"
+                    android:drawableStart="@drawable/dots"
+                    android:drawableTint="@color/white" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_gravity="center"
+                    app:chipSpacingHorizontal="0dp"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hours_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/green_a_700"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:chipCornerRadius="10dp"
+                        app:chipEndPadding="3dp"
+                        app:chipMinTouchTargetSize="40dp"
+                        app:chipStartPadding="3dp"
+                        app:chipStrokeColor="@color/green_900"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="0" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hours_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/green_a_700"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:chipCornerRadius="10dp"
+                        app:chipEndPadding="3dp"
+                        app:chipMinTouchTargetSize="40dp"
+                        app:chipStartPadding="3dp"
+                        app:chipStrokeColor="@color/green_900"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="0" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:layout_gravity="center"
+                    android:drawableStart="@drawable/dots"
+                    android:drawableTint="@color/white" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="4"
+                    android:layout_gravity="center"
+                    app:chipSpacingHorizontal="0dp"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/minutes_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/green_a_700"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:chipCornerRadius="10dp"
+                        app:chipEndPadding="3dp"
+                        app:chipMinTouchTargetSize="40dp"
+                        app:chipStartPadding="3dp"
+                        app:chipStrokeColor="@color/green_900"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="0" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/minutes_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/green_a_700"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        app:chipCornerRadius="10dp"
+                        app:chipEndPadding="3dp"
+                        app:chipMinTouchTargetSize="40dp"
+                        app:chipStartPadding="3dp"
+                        app:chipStrokeColor="@color/green_900"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="0" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/exam_counter_days_title"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/exam_counter_hours_title"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="4"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/exam_counter_minutes_title"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </GridLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/classes_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/classes_title"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/welcome_text"
+        app:layout_constraintTop_toBottomOf="@id/exam_timer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/main_classes_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey_500"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/classes_title"
+        app:layout_constraintEnd_toEndOf="@id/user_logo"
+        app:layout_constraintTop_toTopOf="@id/classes_title"
+        tools:text="classes today" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_classes_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/user_logo"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="@id/welcome_text"
+        app:layout_constraintTop_toBottomOf="@id/classes_title"
+        tools:listitem="@layout/rv_classes_home_item" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/homework_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/homework_title"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/welcome_text"
+        app:layout_constraintTop_toBottomOf="@id/rv_classes_home" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_homeworks"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/user_logo"
+        app:layout_constraintHeight_percent="0.3"
+        tools:listitem="@layout/rv_homeworks_home_item"
+        app:layout_constraintStart_toStartOf="@id/welcome_text"
+        app:layout_constraintTop_toBottomOf="@id/homework_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
