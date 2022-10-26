@@ -12,4 +12,7 @@
     <string name="open_in_skype">Open in</string>
     <string name="homework_title">Homework</string>
     <string name="lesson_time_range">%1$s - %2$s</string>
+    <string name="classes_today">%1$d classes today</string>
+    <string name="days_before_homework">%1$d days left</string>
+    <string name="teacher_name">Teacher: %1$s</string>
 </resources>

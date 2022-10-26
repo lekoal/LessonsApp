@@ -1,6 +1,5 @@
 package com.example.lessonsapp.ui.main
 
-import android.icu.util.Calendar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lessonsapp.R
 import com.example.lessonsapp.data.LessonsMockData
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class RVMainClassesAdapter : RecyclerView.Adapter<RVMainClassesAdapter.MainViewHolder>() {
     private var data: List<LessonsMockData> = emptyList()
+
+    var onItemClick: ((String) -> Unit)? = null
 
     fun setData(lessons: List<LessonsMockData>) {
         data = lessons
@@ -55,6 +54,9 @@ class RVMainClassesAdapter : RecyclerView.Adapter<RVMainClassesAdapter.MainViewH
             val currentTime = formatter.parse(formatter.format(Date()))
             if (currentTime in timeStart..timeEnd) {
                 openIn.visibility = View.VISIBLE
+                openIn.setOnClickListener {
+                    onItemClick?.invoke(item.name)
+                }
             } else {
                 openIn.visibility = View.GONE
             }

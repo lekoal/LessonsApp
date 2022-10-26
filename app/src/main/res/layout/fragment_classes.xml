@@ -35,14 +35,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
+        app:layout_constraintHeight_percent="0.8"
         android:orientation="vertical"
         android:paddingTop="5dp"
+        android:layout_marginTop="40dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment_classes_when_date"
+        app:layout_constraintTop_toBottomOf="@id/fragment_classes_title"
         tools:listitem="@layout/rv_classes_classes_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

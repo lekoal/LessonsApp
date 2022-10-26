@@ -4,7 +4,7 @@ class LessonsListMock {
     fun getLessons() = listOf(
         LessonsMockData(
             "Algebra",
-            "26.10",
+            "26.10.2022",
             "8:00",
             "8:45",
             "Teacher 1",
@@ -12,7 +12,7 @@ class LessonsListMock {
         ),
         LessonsMockData(
             "Chemistry",
-            "26.10",
+            "26.10.2022",
             "9:00",
             "9:45",
             "Teacher 2",
@@ -20,7 +20,7 @@ class LessonsListMock {
         ),
         LessonsMockData(
             "Economics",
-            "26.10",
+            "26.10.2022",
             "10:00",
             "10:45",
             "Teacher 3",
@@ -28,7 +28,7 @@ class LessonsListMock {
         ),
         LessonsMockData(
             "Geography",
-            "26.10",
+            "26.10.2022",
             "11:00",
             "11:45",
             "Teacher 4",
@@ -36,7 +36,7 @@ class LessonsListMock {
         ),
         LessonsMockData(
             "Geometry",
-            "26.10",
+            "26.10.2022",
             "12:00",
             "12:45",
             "Teacher 5",
@@ -44,7 +44,7 @@ class LessonsListMock {
         ),
         LessonsMockData(
             "History",
-            "26.10",
+            "26.10.2022",
             "13:00",
             "13:45",
             "Teacher 6",
@@ -52,7 +52,7 @@ class LessonsListMock {
         ),
         LessonsMockData(
             "Music",
-            "26.10",
+            "26.10.2022",
             "14:00",
             "14:45",
             "Teacher 7",
